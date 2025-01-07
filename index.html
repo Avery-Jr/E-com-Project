@@ -76,14 +76,30 @@
     ></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
+        const productList = document.querySelector('#product-list');
+        let productsData = [];
+        let productHTML = '';
         fetch('products.json')
         .then((response) => response.json())
-        .then((data) => {
-          colsole.log(data)
-          data,foreach(product => {
-            
-          })
-        })
+          data.foreach(product => {
+            productHTML +=
+            <div class="col-md-4">
+              <div class="card-md-4">
+                <img src="https://placehold.co/100"
+                class="card-img-top"
+                alt="Product 1"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">${product.name}</h5>
+                  <p class="card-text">$10.99</p>
+                  <p class="card-text">Description for product</p>
+                  <button class="btn btn-primary add-to-cart" data-id="$product.id">
+                    Add to cart
+                    </button>
+                </div>
+              </div>
+            </div>
+        });
         });
     </script>
   </body>
