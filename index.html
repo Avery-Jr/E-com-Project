@@ -76,7 +76,14 @@
     ></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        
+        fetch('products.json')
+        .then((response) => response.json())
+        .then((data) => {
+          colsole.log(data)
+          data,foreach(product => {
+            
+          })
+        })
         });
     </script>
   </body>
