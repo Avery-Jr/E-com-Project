@@ -81,13 +81,14 @@
         let productHTML = '';
         fetch('products.json')
         .then((response) => response.json())
-          data.foreach(product => {
-            productHTML += 
-            `<div class="col-md-4">
+        .then((data) => {
+          productsData = data.products;
+          data.products.foreach(product => {
+            productHTML += `<div class="col-md-4">
               <div class="card-md-4">
                 <img src="https://placehold.co/100"
                 class="card-img-top"
-                alt="Product 1"
+                alt="${product.name}"
                 />
                 <div class="card-body">
                   <h5 class="card-title">${product.name}</h5>
@@ -101,7 +102,34 @@
             </div>`
         });
         productList.innerHTML = productHTML;
+        document.querySelectorAll('add-to-cart').forEach(button) => {
+          button.addEventListener('click', addToCart);
         });
+      ``});
+      //setup cart array
+      const cart = [];
+
+      //add cart product to cart as object
+      function addToCart(event){
+        console.log(event.target.getAttribute('data-id'));
+        const productId = event.target.getAttribute('data-id');
+        const product = productsData[productId - 1];
+
+        let cartItem = {
+          name: product.name,
+        };
+        cart.push(cartItem);
+        console.log(cart);
+        renderCart();
+      }
+
+      //update and display cart
+      function renderCart() {
+        const cartList =
+        let cartItem = '';
+        cart.forEach(product) => {
+        cartItem += `<p></p>;
+      });
     </script>
   </body>
 </html>
