@@ -9,7 +9,7 @@
       rel="stylesheet"
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
-    />
+    />\
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -82,8 +82,8 @@
         fetch('products.json')
         .then((response) => response.json())
           data.foreach(product => {
-            productHTML +=
-            <div class="col-md-4">
+            productHTML += 
+            `<div class="col-md-4">
               <div class="card-md-4">
                 <img src="https://placehold.co/100"
                 class="card-img-top"
@@ -93,13 +93,14 @@
                   <h5 class="card-title">${product.name}</h5>
                   <p class="card-text">$10.99</p>
                   <p class="card-text">Description for product</p>
-                  <button class="btn btn-primary add-to-cart" data-id="$product.id">
+                  <button class="btn btn-primary add-to-cart" data-id="${product.id}">
                     Add to cart
                     </button>
                 </div>
               </div>
-            </div>
+            </div>`
         });
+        productList.innerHTML = productHTML;
         });
     </script>
   </body>
