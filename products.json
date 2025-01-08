@@ -20,7 +20,7 @@
       "description": "Description for product 3",
       "price": 15.99,
       "image": "https://placehold.co/100"
-    }
+    },
     {
       "id": 4,
       "name": "Product 4",
@@ -62,6 +62,6 @@
       "description": "Description for product 9",
       "price": 2.99,
       "image": "https://placehold.co/100"
-    },
+    }
   ]
 }
