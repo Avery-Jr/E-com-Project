@@ -112,11 +112,13 @@
       //add cart product to cart as object
       function addToCart(event){
         console.log(event.target.getAttribute('data-id'));
-        const productId = event.target.getAttribute('data-id');
+        const productId =event.target.getAttribute('data-id');
         const product = productsData[productId - 1];
 
         let cartItem = {
+          id: product.id,
           name: product.name,
+          price: product.price,
         };
         cart.push(cartItem);
         console.log(cart);
@@ -128,13 +130,23 @@
         const cartList = '';
         let cartItem = '';
         cart.forEach((product) => {
-        cartItem += `<p>${product.name}</p>`;
+        cartItem += `
+        <div class="cart-item">
+        <h5>${product.name}</h5>
+        <p>${product.price} x 2</p>
+        <button class="btn-danger remove-from-cart" data-id="${product.id}"> Remove </button>
+        </div>
+        `;
+        });
+        cartList.innerHTML = cartItem;
+        document.querySelectorAll('.remove-from-cart').forEach((button) => {
+          button.addEventListener('click', removeFromCart);
         });
         }
       });
 
 
-      
+
     </script>
   </body>
 </html>
