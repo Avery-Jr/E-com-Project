@@ -92,7 +92,7 @@
                 />
                 <div class="card-body">
                   <h5 class="card-title">${product.name}</h5>
-                  <p class="card-text">${product.price.toFixed(2)}</p>
+                  <p class="card-text">$${product.price.toFixed(2)}</p>
                   <p class="card-text">${product.description}</p>
                   <button class="btn btn-primary add-to-cart" data-id="${product.id}">
                     Add to cart
@@ -102,7 +102,7 @@
             </div>`
         });
         productList.innerHTML = productHTML;
-        document.querySelectorAll('add-to-cart').forEach(button) => {
+        document.querySelectorAll('add-to-cart').forEach((button) => {
           button.addEventListener('click', addToCart);
         });
       });
@@ -125,11 +125,16 @@
 
       //update and display cart
       function renderCart() {
-        const cartList =
+        const cartList = '';
         let cartItem = '';
-        cart.forEach(product) => {
-        cartItem += `<p>${product.name}</p>;
+        cart.forEach((product) => {
+        cartItem += `<p>${product.name}</p>`;
+        });
+        }
       });
+
+
+      
     </script>
   </body>
 </html>
