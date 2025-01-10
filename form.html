@@ -41,11 +41,15 @@
     </nav>
 
     <div class="container mt-5">
-      <h2>Cart</h2>
-      <div id="cart-list">
-        <!-- Cart items will be dynamically inserted here -->
-      </div>
-      <button class="btn btn-primary" id="checkout-button">Checkout</button>
+      <div class="container mt-5">
+  <form action="checkout.html" method="get">
+<label for="firstName">First Name</label>
+<input type="text" name="firstName" value=""/><br/>
+<label for="lastName">Last Name</label>
+<input type="text" name="lastName" value=""/><br/>
+<button type="submit">Submit</button>
+</form>
+</div>
     </div>
 
     <div class="container mt-5">
@@ -153,17 +157,6 @@
         }
         }
       });
-
-<div class="container mt-5">
-  <form action="checkout.html" method="get">
-<label for="firstName">First Name</label>
-<input type="text" name="firstName" value=""/><br/>
-<label for="lastName">Last Name</label>
-<input type="text" name="lastName" value=""/><br/>
-<button type="submit">Submit</button>
-</form>
-</div>
-
     </script>
   </body>
 </html>

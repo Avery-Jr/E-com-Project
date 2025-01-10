@@ -134,6 +134,9 @@
         <div class="cart-item">
         <h5>${product.name}</h5>
         <p>$${product.price}</p>
+        <input type="hidden" name="id" value="${product.id}"/>
+        <input type="hidden" name="name" value="${product.name}"/>
+        <input type="hidden" name="price" value="${product.price}"/>
         <button class="btn-danger remove-from-cart" data-id="${product.id}"> Remove </button>
         </div>
         `;
