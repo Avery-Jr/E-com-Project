@@ -41,11 +41,32 @@
     </nav>
 
     <div class="container mt-5">
+     <form action="" method="get">
       <h2>Cart</h2>
       <div id="cart-list">
         <!-- Cart items will be dynamically inserted here -->
+
+        <!--Cart item template start -->
+      <div class="cart-item">
+         <h5 class="card-title">Product 1</h5>
+          <p class="card-text">$10.99 x 2</p>
+          <input type="hidden" name="id" value="1">
+          <input type="hidden" name="name" value="Product 1">
+          <input type="hidden" name="price" value="10.99">
+          <input type="hidden" name="id" value="2">
+          <input type="hidden" name="name" value="Product 2">
+          <input type="hidden" name="price" value="11.99">
+
+          <button class="btn btn-secondary increasing-quantity" data-id="1"> + </button>
+
+          <button class="btn btn-secondary decrese-quantity" data-id="1"> - </button>
+
+          <button class="btn-danger remove-from-cart" data-id="1"> Remove </button>
+      </div>
+         <!-- Cart item template end -->
       </div>
       <button class="btn btn-primary" id="checkout-button">Checkout</button>
+      </form>
     </div>
 
     <div class="container mt-5">
