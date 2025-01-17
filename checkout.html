@@ -46,21 +46,6 @@
       <div id="cart-summary">
         <!-- Cart summary will be dynamically inserted here -->
       </div>
-      <h2>Subtotal</h2>
-      <div id="subtotal">
-        <!-- Subtotal will display here-->
-         
-      </div>
-      <h2>Tax</h2>
-      <div id="tax">
-         <!-- Tax will display here-->
-
-      </div>
-      <h2>Total</h2>
-      <div id="total">
-         <!-- Total will display here-->
-
-      </div>
     <!--<form id="checkout-form".-->
         <h2>Login</h2>
         <h3 id="error"></h3>
@@ -71,6 +56,7 @@
             type="email"
             class="form-control"
             id="email"
+            name="email"
             placeholder="Enter your email"
             required
           />
@@ -82,6 +68,7 @@
             type="password"
             class="form-control"
             id="password"
+            name="password"
             placeholder="Enter your password"
             required
           />
@@ -94,6 +81,7 @@
             type="text"
             class="form-control"
             id="address"
+            name="address"
             placeholder="Enter your address"
             required
           />
@@ -104,6 +92,7 @@
             type="text"
             class="form-control"
             id="apartment"
+            name="apartment"
             placeholder="Enter your apartment number (optional)"
           />
         </div>
@@ -113,6 +102,7 @@
             type="text"
             class="form-control"
             id="city"
+            name="city"
             placeholder="Enter your city"
             required
           />
@@ -179,6 +169,7 @@
             type="text"
             class="form-control"
             id="zip"
+            name="zip"
             placeholder="Enter your zip code"
             required
           />
@@ -219,30 +210,24 @@
        function submitCart(event){
         event.preventDefault();
         console.log("submitted");
-        fetch('users.json').then(response => response.json()).then( data =>{
-          data.forEach(user => {
-            console.log(user)
-          });
+        fetch('users.json').
+        then(response => response.json()).
+        then( data =>{
+        const form = document.getElementById('checkout-form');
+        const email = document.getElementById('email').value;
+        console.log(email);
+        const exists = data.some( user => user.email == email);//true or false statment for email
+        console.log(exists);
+        if (exists) {
+          form.submit();
+        } else {
+          const errorMessage = document.getElementById('error-message');
+          errorMessage.innerHTML = 'User does not exists'
+        }
         });
        }
       });
-      const email= document.getElementById("email");
-      const password=document.getElementById("password");
-      const errorElement = document.getElementById("error");
-      const form=document.getElementById("checkout-form");
-      form.addEventListener("submit" , (e) => {
-        let messages =[]
-        if (password.value.length <= 6 ){
-          messages.push("Password must be more than 6 characters");
-        }
-        if(password.value.length>= 20){
-          messages.push('Password must be less than 20 characters');
-        }
-        if (messages.length>0){
-          e.preventDefault()
-          errorElement.innerText = messages.join(', ');
-        }
-      })
+      
     </script>
   </body>
 </html>

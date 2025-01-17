@@ -42,8 +42,25 @@
 
     <div class="container mt-5">
       <h1>Order Confirmation</h1>
-      <div id="order-summary">
-        <!-- Order summary will be dynamically inserted here -->
+      <div id="cart-summary">
+        <!-- Cart summary will be dynamically inserted here -->
+      </div>
+      <h2>Subtotal</h2>
+      <div id="subtotal">
+        <!-- Subtotal will display here-->
+         
+      </div>
+      <h2>Tax</h2>
+      <div id="tax">
+         <!-- Tax will display here-->
+
+      </div>
+      <h2>Total</h2>
+      <div id="total">
+         <!-- Total will display here-->
+
+      </div>
+
       </div>
       <p>
         Thank you for your business! Your order will be shipped within 3-5
@@ -53,8 +70,12 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
+       const urlParams = new URLSearchParams(window.location.search);
+       const cartItems = Array.from(query.entries());
+
+
        
-      });
+    });
     </script>
   </body>
 </html>
