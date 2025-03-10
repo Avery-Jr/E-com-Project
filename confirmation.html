@@ -45,19 +45,16 @@
       <div id="cart-summary">
         <!-- Cart summary will be dynamically inserted here -->
       </div>
-      <h2>Subtotal</h2>
-      <div id="subtotal">
-        <!-- Subtotal will display here-->
-         
-      </div>
-      <h2>Tax</h2>
-      <div id="tax">
-         <!-- Tax will display here-->
 
-      </div>
       <h2>Total</h2>
       <div id="total">
-         <!-- Total will display here-->
+         <!-- total here-->
+
+      </div>
+      
+      <h2>Shipping Address</h2>
+      <div id="address">
+         <!-- location here-->
 
       </div>
 
@@ -70,11 +67,46 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-       const urlParams = new URLSearchParams(window.location.search);
-       const cartItems = Array.from(query.entries());
+        const urlParams = new URLSearchParams(window.location.search);
+       const cartSummary = document.getElementById('cart-summary');
+       //Collect the patams into arrays
+       const ids = urlParams.getAll('id');
+       const names = urlParams.getAll('name');
+       const prices = urlParams.getAll('price');
+       //Create a loop to make the items
+       const cartItems = [];
+       let cartItem = '';
+       for(let i = 0; i < ids.length; i++) {
+        cartItem +=`
+        <div class="cart-item">
+          <h5>${names[i]}</h5>
+          <p>$${parseFloat(prices[i]).toFixed(2)}</p>
+          <input type="hidden" name="id" value="${ids[i]}"/>
+          <input type="hidden" name="name" value="${names[i]}"/>
+          <input type="hidden" name="price" value="${prices[i]}"/>
+          </div>
+        `;
+       }
+       cartSummary.innerHTML = cartItem;
+          
+          //Total cost
+          function total(){
+            cartItems.forEach(([key, value]) => {
+            if (key === 'price') {
+              subtotal += parseFloat(value); // Add price to subtotal
+            }
+          });
 
+          const tax = subtotal * 0.15; // 15% tax
+          const total = subtotal + tax;
+          //Updating the total of all the items
+          document.getElementById('total').textContent = "$"+total.toFixed(2);
+          console.log(total);
+          }
+        
 
-       
+        //Displaying the adress/location
+        
     });
     </script>
   </body>
