@@ -91,19 +91,29 @@
           
           //Total cost
           function total(){
+            //calculating the subtotal
             cartItems.forEach(([key, value]) => {
-            if (key === 'price') {
+            if (key === 'prices') {
               subtotal += parseFloat(value); // Add price to subtotal
             }
-          });
+            console.log(sudtotal);
+         });
 
           const tax = subtotal * 0.15; // 15% tax
           const total = subtotal + tax;
           //Updating the total of all the items
           document.getElementById('total').textContent = "$"+total.toFixed(2);
           console.log(total);
+          total += `
+          <div id="total">
+          <p>$${parseFloat(prices[i]).toFixed(2)}</p>
+          <input type="hidden" name="id" value="${ids[i]}"/>
+          <input type="hidden" name="name" value="${names[i]}"/>
+          <input type="hidden" name="price" value="${prices[i]}"/>
+          </div>
+          `;
           }
-        
+         
 
         //Displaying the adress/location
         
