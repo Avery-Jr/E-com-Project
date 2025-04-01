@@ -1,6 +1,9 @@
 // TODO: Import required modules
 // 1. Import express
+const express = require("express");
+express.static(root, [options])
 // 2. Import mongoose
+mongoose.connect("mongodb://127.0.0.1:27017/myapp");
 // 3. Import dotenv to load environment variables
 
 // TODO: Load environment variables
@@ -19,6 +22,9 @@
 
 // TODO: Define routes
 // For now, just create a simple root route that responds with a welcome message
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
 
 // TODO: Start the server
 // Use the PORT from your environment variables or default to 3000
