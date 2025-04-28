@@ -1,7 +1,7 @@
 // TODO: Import express and your User model
-
+import express from "express";
 // TODO: Create an express router
-
+var router = express.Router();
 // TODO: Create POST route for user registration (/api/users/register)
 // 1. Check if a user with the given email already exists
 // 2. If not, create a new user with the request body data
