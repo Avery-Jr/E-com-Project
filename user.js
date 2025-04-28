@@ -1,8 +1,9 @@
 // TODO: Import mongoose
 import mongoose from "mongoose";
-const { Schema } = mongoose;
+
+
 // TODO: Create a user schema with the following fields:
-const user = new Schema({
+const userModle = new mongoose.Schema({
   // - firstName (String, required)
   firstName: { type: String, required: true },
   // - lastName (String, required)
@@ -26,3 +27,4 @@ const user = new Schema({
   },
 });
 // TODO: Create and export the User model
+export const User = mongoose.model("User", userModle);
