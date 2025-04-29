@@ -5,7 +5,10 @@ import { User } from "./user";
 // TODO: Create an express router
 const router = express.Router();
 // TODO: Create POST route for user registration (/api/users/register)
-router.post("/todos", async (req, res) => {
+app.post("/", (req, res) => {
+  res.send("POST request to the homepage");
+});
+/*router.post("/todos", async (req, res) => {
   const todo = new Todo(req.body);
   try {
     const newTodo = await todo.save();
@@ -13,7 +16,7 @@ router.post("/todos", async (req, res) => {
   } catch (error) {
     res.status(400).json({ message: error.message });
   }
-});
+});*/
 // 1. Check if a user with the given email already exists
 // 2. If not, create a new user with the request body data
 // 3. Return the new user (without the password) with status 201
