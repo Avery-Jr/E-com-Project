@@ -6,7 +6,7 @@ import { User } from "./user";
 const router = express.Router();
 // TODO: Create POST route for user registration (/api/users/register)
 
-router.post("/user/register", async (req, res) => {
+router.post("/api/users/register", async (req, res) => {
   const user = new userModle(req.body);
   try {
     const newUser = await user.save();
@@ -20,7 +20,7 @@ router.post("/user/register", async (req, res) => {
 // 3. Return the new user (without the password) with status 201
 
 // TODO: Create POST route for user login (/api/users/login)
-router.post("/user/register", async (req, res) => {
+router.post("/api/users/login", async (req, res) => {
   const user = new userModle(req.body);
   try {
     const newUser = await user.save();
