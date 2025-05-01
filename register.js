@@ -1,6 +1,13 @@
 // TODO: When the DOM loads, set up event listeners for the registration form
+const form = document.getElementsByClassName("form");
+form.addEventListener("click", function (e) {
+  console.log(form);
+  console.log(e.currentTarget === form);
+});
 
 // TODO: Create a function to handle the registration form submission
+
+
 // 1. Prevent the default form submission
 // 2. Gather all form data into an object
 // 3. Validate form data (all required fields, email format, etc.)
