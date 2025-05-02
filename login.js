@@ -1,4 +1,9 @@
 // TODO: When the DOM loads, set up event listeners for the login form
+const form = document.getElementsByClassName("form");
+form.addEventListener("click", function (e) {
+  console.log(form);
+  console.log(e.currentTarget === form);
+});
 
 // TODO: Create a function to handle the login form submission
 // 1. Prevent the default form submission

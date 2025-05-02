@@ -5,7 +5,6 @@ import { User } from "./user";
 // TODO: Create an express router
 const router = express.Router();
 // TODO: Create POST route for user registration (/api/users/register)
-
 router.post("/api/users/register", async (req, res) => {
   const user = new userModle(req.body);
   try {
@@ -33,3 +32,6 @@ router.post("/api/users/login", async (req, res) => {
 // 2. Check if the password matches
 // 3. If authentication successful, return user info (without password)
 // 4. If authentication fails, return appropriate error message
+
+// TODO: Export the router
+module.exports = router;
