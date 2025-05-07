@@ -53,48 +53,100 @@
         <!-- TODO: Create a registration form with the following fields: -->
          <!--First name -->
     <div class="form">
-    <label for="fName">Enter your first name: </label>
-    <input type="text" name="first" id="firstName" required  />
+    <label for="fName">Enter your first name: <span class="text-danger">*</span></label>
+    <input type="text" name="first" id="firstName" required/>
   </div>
              <!-- Last Name -->
     <div class="form">
-    <label for="lName">Enter your Last name: </label>
-    <input type="text" name="last" id="lastName" required  />
+    <label for="lName">Enter your Last name: <span class="text-danger">*</span></label>
+    <input type="text" name="last" id="lastName" required/>
   </div>
              <!-- Email -->
 <div class="form">
-    <label for="email">Enter your email: </label>
-    <input type="email" name="email" id="email" required  />
+    <label for="email">Enter your email: <span class="text-danger">*</span></label>
+    <input type="email" name="email" id="email" required/>
   </div>
              <!-- Password -->
 <div class="form">
-    <label for="password">Enter your password: </label>
-    <input type="password" name="password" id="password" required  />
+    <label for="password">Enter your password: <span class="text-danger">*</span></label>
+    <input type="password" name="password" id="password" required/>
   </div>
              <!-- Street Address -->
 <div class="form">
-    <label for="address">Enter your street address: </label>
-    <input type="url" name="address" id="address" required  />
+    <label for="address">Enter your street address: <span class="text-danger">*</span></label>
+    <input type="url" name="address" id="address" required/>
   </div>
              <!-- Apartment (optional) -->
 <div class="form">
     <label for="apartment">Enter your apartment: </label>
-    <input type="url" name="apartment" id="apartment" optional />
+    <input type="url" name="apartment" id="apartment" optiona/>
   </div>
              <!-- City -->
 <div class="form">
-    <label for="city">Enter your city: </label>
-    <input type="text" name="city" id="city" required  />
+    <label for="city">Enter your city: <span class="text-danger">*</span></label>
+    <input type="text" name="city" id="city" required/>
   </div>
              <!-- State -->
 <div class="form">
-    <label for="state">Enter your state: </label>
-    <input type="text" name="state" id="state" required  />
+    <label for="state">Enter your state: <span class="text-danger">*</span></label>
+    <select class="form-control" id="state" required>
+            <option value="">Select your state</option>
+            <option value="AL">AL</option>
+            <option value="AK">AK</option>
+            <option value="AZ">AZ</option>
+            <option value="AR">AR</option>
+            <option value="CA">CA</option>
+            <option value="CO">CO</option>
+            <option value="CT">CT</option>
+            <option value="DE">DE</option>
+            <option value="FL">FL</option>
+            <option value="GA">GA</option>
+            <option value="HI">HI</option>
+            <option value="ID">ID</option>
+            <option value="IL">IL</option>
+            <option value="IN">IN</option>
+            <option value="IA">IA</option>
+            <option value="KS">KS</option>
+            <option value="KY">KY</option>
+            <option value="LA">LA</option>
+            <option value="ME">ME</option>
+            <option value="MD">MD</option>
+            <option value="MA">MA</option>
+            <option value="MI">MI</option>
+            <option value="MN">MN</option>
+            <option value="MS">MS</option>
+            <option value="MO">MO</option>
+            <option value="MT">MT</option>
+            <option value="NE">NE</option>
+            <option value="NV">NV</option>
+            <option value="NH">NH</option>
+            <option value="NJ">NJ</option>
+            <option value="NM">NM</option>
+            <option value="NY">NY</option>
+            <option value="NC">NC</option>
+            <option value="ND">ND</option>
+            <option value="OH">OH</option>
+            <option value="OK">OK</option>
+            <option value="OR">OR</option>
+            <option value="PA">PA</option>
+            <option value="RI">RI</option>
+            <option value="SC">SC</option>
+            <option value="SD">SD</option>
+            <option value="TN">TN</option>
+            <option value="TX">TX</option>
+            <option value="UT">UT</option>
+            <option value="VT">VT</option>
+            <option value="VA">VA</option>
+            <option value="WA">WA</option>
+            <option value="WV">WV</option>
+            <option value="WI">WI</option>
+            <option value="WY">WY</option>
+          </select>
   </div>
              <!-- Zip Code -->
 <div class="form">
-    <label for="zip">Enter your zip code: </label>
-    <input type="number" name="zipcode" id="zip" required  />
+    <label for="zip">Enter your zip code: <span class="text-danger">*</span></label>
+    <input type="number" name="zipcode" id="zip" required/>
   </div>
              <!-- Submit Button -->
 <input type="submit"/>
