@@ -5,6 +5,8 @@ import express from "express";
 import mongoose from "mongoose";
 // 3. Import dotenv to load environment variables
 import * as dotenv from "dotenv";
+import path from "path";
+import {fileURLToPath} from "url";
 // TODO: Load environment variables
 // Hint: Use dotenv.config()
 dotenv.config();
@@ -14,11 +16,15 @@ dotenv.config();
 const app = express();
 const port = 3000;
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 // TODO: Set up middleware
 // 1. Express JSON parser
 // 2. Serve static files from the 'public' directory
 app.use(express.json());
-console.log("db", process.env.MONGODB_URI);
+//app.use(express.static("public"));
+//console.log("db", process.env.MONGODB_URI);
 
 // TODO: Connect to MongoDB
 // Hint: Use mongoose.connect with your MONGODB_URI
@@ -31,7 +37,15 @@ mongoose
 // TODO: Define routes
 // For now, just create a simple root route that responds with a welcome message
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.sendFile(path.join(__dirname, "public", "login.html"));
+});
+
+app.get("/checkout", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "checkout.html"));
+});
+
+app.get("/confirmation", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "confirmation.html"));
 });
 
 // TODO: Start the server
@@ -47,3 +61,4 @@ process.on("SIGINT", () => {
     process.exit(0);
   });
 });
+

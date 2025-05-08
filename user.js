@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 
 
 // TODO: Create a user schema with the following fields:
-const userModle = new mongoose.Schema({
+const userModel = new mongoose.Schema({
   // - firstName (String, required)
   firstName: { type: String, required: true },
   // - lastName (String, required)
@@ -27,4 +27,4 @@ const userModle = new mongoose.Schema({
   },
 });
 // TODO: Create and export the User model
-export const User = mongoose.model("User", userModle);
+export const User = mongoose.model("User", userModel);
