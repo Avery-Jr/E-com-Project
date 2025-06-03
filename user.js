@@ -1,7 +1,6 @@
 // TODO: Import mongoose
 import mongoose from "mongoose";
 
-
 // TODO: Create a user schema with the following fields:
 const userModel = new mongoose.Schema({
   // - firstName (String, required)
@@ -16,7 +15,7 @@ const userModel = new mongoose.Schema({
   address: {
   street: { type: String, required: true },
   //   - apartment (String, optional)
-  apartment: { type: String, optional: true },
+  apartment: { type: String },
   //   - city (String, required)
   city: { type: String, required: true },
   //   - state (String, required)

@@ -1,67 +1,63 @@
+[{
+  "id": 1,
+  "name": "ViGrace gloves",
+  "description": "Very warm and well made",
+  "price": 10.99,
+  "image": "https://placehold.co/100"
+},
 {
-  "products": [
-    {
-      "id": 1,
-      "name": "ViGrace gloves",
-      "description": "Very warm and well made",
-      "price": 10.99,
-      "image": "https://placehold.co/100"
-    },
-    {
-      "id": 2,
-      "name": "Product 2",
-      "description": "Description for product 2",
-      "price": 12.99,
-      "image": "https://placehold.co/100"
-    },
-    {
-      "id": 3,
-      "name": "Product 3",
-      "description": "Description for product 3",
-      "price": 15.99,
-      "image": "https://placehold.co/100"
-    },
-    {
-      "id": 4,
-      "name": "Bills first dollar",
-      "description": "Not just a normal dollar",
-      "price": 3.99,
-      "image": "https://placehold.co/100"
-    },
-    {
-      "id": 5,
-      "name": "A jar of air",
-      "description": "It's just air",
-      "price": 7,
-      "image": "https://placehold.co/100"
-    },
-    {
-      "id": 6,
-      "name": "Product 6",
-      "description": "Description for product 6",
-      "price": 10.50,
-      "image": "https://placehold.co/100"
-    },
-    {
-      "id": 7,
-      "name": "Bag of chips",
-      "description": "It's also unsealed and is filled with multiple kinda of different chips.",
-      "price": 3.5,
-      "image": "https://placehold.co/100"
-    },
-    {
-      "id": 8,
-      "name": "Product 8",
-      "description": "Description for product 8",
-      "price": 7.59,
-      "image": "https://placehold.co/100"
-    },
-    {
-      "id": 9,
-      "name": "Stick that looks like an wooden sword",
-      "description": "It's a pretty rare find here",
-      "price": 999.99,
-      "image": "https://placehold.co/100"
-    }
-  ]
-}
+  "id": 2,
+  "name": "Product 2",
+  "description": "Description for product 2",
+  "price": 12.99,
+  "image": "https://placehold.co/100"
+},
+{
+  "id": 3,
+  "name": "Product 3",
+  "description": "Description for product 3",
+  "price": 15.99,
+  "image": "https://placehold.co/100"
+},
+{
+  "id": 4,
+  "name": "Bills first dollar",
+  "description": "Not just a normal dollar",
+  "price": 3.99,
+  "image": "https://placehold.co/100"
+},
+{
+  "id": 5,
+  "name": "A jar of air",
+  "description": "It's just air",
+  "price": 7,
+  "image": "https://placehold.co/100"
+},
+{
+  "id": 6,
+  "name": "Product 6",
+  "description": "Description for product 6",
+  "price": 10.50,
+  "image": "https://placehold.co/100"
+},
+{
+  "id": 7,
+  "name": "Bag of chips",
+  "description": "It's also unsealed and is filled with multiple kinda of different chips.",
+  "price": 3.5,
+  "image": "https://placehold.co/100"
+},
+{
+  "id": 8,
+  "name": "Product 8",
+  "description": "Description for product 8",
+  "price": 7.59,
+  "image": "https://placehold.co/100"
+},
+{
+  "id": 9,
+  "name": "Stick that looks like an wooden sword",
+  "description": "It's a pretty rare find here",
+  "price": 999.99,
+  "image": "https://placehold.co/100"
+}]

@@ -18,7 +18,7 @@ const port = 3000;
 // 1. Express JSON parser
 // 2. Serve static files from the 'public' directory
 app.use(express.json());
-//app.use("/api", todoRouter);
+//app.use("/api", userRouter);
 app.use(express.static("public"));
 //app.use(express.static("public"));
 //console.log("db", process.env.MONGODB_URI);
