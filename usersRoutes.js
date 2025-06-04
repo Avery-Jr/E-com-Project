@@ -1,12 +1,21 @@
 // TODO: Import express and your User model
 import mongoose from "mongoose";
 import express from "express";
-import { User } from "./user";
+import { User } from "./user.js";
 // TODO: Create an express router
 const router = express.Router();
 // TODO: Create POST route for user registration (/api/users/register)
-router.post("/api/users/register", async (req, res) => {
-  const user = new userModle(req.body);
+router.get("/users/register", async (req, res) => {
+  try {
+    const users = await User.find().sort({ createdAt: -1 });
+    res.json(users);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+router.post("/users/register", async (req, res) => {
+  const user = new User(req.body);
   try {
     const newUser = await user.save();
     res.status(201).json(newUser);
@@ -19,8 +28,17 @@ router.post("/api/users/register", async (req, res) => {
 // 3. Return the new user (without the password) with status 201
 
 // TODO: Create POST route for user login (/api/users/login)
-router.post("/api/users/login", async (req, res) => {
-  const user = new userModle(req.body);
+router.get("/users/login", async (req, res) => {
+  try {
+    const users = await User.find().sort({ createdAt: -1 });
+    res.json(users);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+router.post("/users/login", async (req, res) => {
+  const user = new User(req.body);
   try {
     const newUser = await user.save();
     res.status(201).json(newUser);

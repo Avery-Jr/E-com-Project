@@ -92,7 +92,7 @@
         const productList = document.querySelector("#product-list");
         let productsData = [];
         let productHTML = "";
-        fetch("products.json")
+        fetch("/api/products")
           .then((response) => response.json())
           .then((data) => {
             productsData = data;
