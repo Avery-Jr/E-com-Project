@@ -7,6 +7,7 @@ import mongoose from "mongoose";
 import * as dotenv from "dotenv";
 // TODO: Load environment variables
 import { productRouter } from "./productsRoutes.js";
+import {userRouter } from "./usersRoutes.js";
 // Hint: Use dotenv.config()
 dotenv.config();
 
@@ -20,6 +21,7 @@ const port = 3000;
 // 2. Serve static files from the 'public' directory
 app.use(express.json());
 app.use("/api", productRouter);
+app.use("/api", userRouter);
 app.use(express.static("public"));
 //app.use(express.static("public"));
 //console.log("db", process.env.MONGODB_URI);

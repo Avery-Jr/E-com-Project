@@ -12,8 +12,7 @@ const userModel = new mongoose.Schema({
   // - password (String, required)
   password: { type: String, required: true },
   // - address:
-  address: {
-  street: { type: String, required: true },
+  streeAddress: { type: String, required: true },
   //   - apartment (String, optional)
   apartment: { type: String },
   //   - city (String, required)
@@ -21,8 +20,7 @@ const userModel = new mongoose.Schema({
   //   - state (String, required)
   state: { type: String, required: true },
   //   - zipCode (String, required)
-  zipCode: { type: String, required: true }
-}
+  zipCode: { type: String, required: true },
 });
 // TODO: Create and export the User model
 export const User = mongoose.model("User", userModel);

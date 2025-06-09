@@ -1,5 +1,4 @@
 // TODO: Import express and your User model
-import mongoose from "mongoose";
 import express from "express";
 import { User } from "./user.js";
 // TODO: Create an express router
@@ -17,11 +16,14 @@ router.get("/users/register", async (req, res) => {
 router.post("/users/register", async (req, res) => {
   const user = new User(req.body);
   try {
+    //if (user == true){
+   // };
     const newUser = await user.save();
     res.status(201).json(newUser);
   } catch (error) {
     res.status(400).json({ message: error.message });
   }
+
 });
 // 1. Check if a user with the given email already exists
 // 2. If not, create a new user with the request body data
@@ -52,4 +54,4 @@ router.post("/users/login", async (req, res) => {
 // 4. If authentication fails, return appropriate error message
 
 // TODO: Export the router
-module.exports = router;
+export { router as userRouter };
