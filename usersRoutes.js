@@ -16,8 +16,10 @@ router.get("/users/register", async (req, res) => {
 router.post("/users/register", async (req, res) => {
   const user = new User(req.body);
   try {
-    //if (user == true){
-   // };
+    const existingUser = await User.findOne({ user });
+    if (existingUser) {
+      return res.status(400).json({ message: "User already exists" });
+    }
     const newUser = await user.save();
     res.status(201).json(newUser);
   } catch (error) {
